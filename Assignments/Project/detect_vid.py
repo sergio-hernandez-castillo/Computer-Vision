@@ -15,13 +15,16 @@ out = cv2.VideoWriter('output/video_result_1.mp4',
 # detect objects in each frame of the video
 while cap.isOpened():
     ret, frame = cap.read()
+
     if ret:
         image = frame
 
         cv2.imshow('image', image)
         out.write(image)
+
         if cv2.waitKey(10) & 0xFF == ord('q'):
             break
+
     else:
         break
 
